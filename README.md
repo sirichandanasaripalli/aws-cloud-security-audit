@@ -1,4 +1,6 @@
-# aws-cloud-security-audit
+Simulated security audit of a fictional e-commerce startup 
+(SecureShop Pvt Ltd) as part of cloud security portfolio development.# aws-cloud-security-audit
+
 AWS Cloud Security Audit Project covering IAM, S3, Access Analyzer, Credential Reports, and CloudTrail.
 
 ## Project Overview
@@ -21,7 +23,13 @@ The objective was to identify security misconfigurations, validate public exposu
 A bucket policy allowed public read access to stored objects.
 
 ### 2. Missing MFA Controls
-Administrative access was reviewed and MFA requirements were evaluated.
+3 out of 4 IAM users had MFA disabled — identified as 
+HIGH severity finding. Verified using AWS Credential Report.
+| Finding | Severity | Status |
+|---|---|---|
+| Public S3 bucket | HIGH | Remediated |
+| 3 users without MFA | HIGH | Identified |
+| No CloudTrail trail | MEDIUM | Documented |
 
 ### 3. Excessive Access Risks
 IAM permissions were reviewed using least-privilege principles.
